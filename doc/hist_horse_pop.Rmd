@@ -1,5 +1,7 @@
 ---
 title: "Historical horse population in Canada"
+params:
+  province: "Alberta"
 output:
   github_document:
     toc: true
