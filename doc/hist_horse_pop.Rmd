@@ -68,7 +68,7 @@ knitr::kable(max_horses, caption = "Table 1. Maximum and Minimum Horse Populatio
 
 Below we zoom in and look at the province of Alberta:
 
-```{r plot province, fig.width=5, fig.height=4}
+```{r plot province, fig.width=5, fig.height=4, fig.cap="Figure 2. Historical number of horses per province in Alberta", out.width='100%'}
 province_plot <- horse_pop %>% 
   filter(GEO == "Alberta") %>% 
   ggplot(aes(x = Ref_Date, y = Value)) +
@@ -76,7 +76,6 @@ province_plot <- horse_pop %>%
   geom_line() +
   xlab("Year") +
   ylab("Number of horses") +
-  ggtitle("Historical number of horses per province in Canada") +
   facet_grid(~GEO) +
   scale_y_continuous(labels = scales::comma) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
